@@ -44,6 +44,7 @@ pip install numpy pandas scipy
 ## Quick Start Example
 
 import pandas as pd
+
 from graph_engine import MultipartiteSetGraphEngine, MathGraphQueryProcessor
 
 # 1. Prepare sample transactional 
