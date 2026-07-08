@@ -1,4 +1,7 @@
 # Fast Multipartite Graph Set-Algebra Engine
+
+**Keywords:** graph engine, multipartite graph, sparse matrix, CSR matrix, graph set algebra, custom DSL parser, recommendation system, fast pathfinding, Python, SciPy, NumPy.
+
 A high-performance discrete graph analysis engine built with Python, NumPy, and SciPy. This project leverages Compressed Sparse Row (CSR) matrix representations to perform rapid set-algebra operations and pathfinding on large-scale multipartite graphs. It includes a built-in domain-specific language (DSL) parser to execute complex graph queries with a SQL-like where filtering layer.
 ## Key Features
 
