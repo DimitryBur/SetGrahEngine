@@ -45,7 +45,7 @@ pip install numpy pandas scipy
 
 import pandas as pd
 
-from graph_engine import MultipartiteSetGraphEngine, MathGraphQueryProcessor
+from SetGrahEngine import MultipartiteSetGraphEngine, MathGraphQueryProcessor
 
 # 1. Prepare sample transactional 
 
