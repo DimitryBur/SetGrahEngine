@@ -44,15 +44,22 @@ pip install numpy pandas scipy
 ## Quick Start Example
 
 import pandas as pdfrom graph_engine import MultipartiteSetGraphEngine, MathGraphQueryProcessor
-# 1. Prepare sample transactional datadata = {
+# 1. Prepare sample transactional 
+
+data = {
     'source': ['Shop_1', 'Shop_1', 'Supplier_1', 'Shop_2'],
     'target': ['Product_A', 'Product_B', 'Product_A', 'Product_B'],
-    'weight': [5000.0, 12000.0, 9500.0, 3000.0]
-}df = pd.DataFrame(data)
+    'weight': [5000.0, 12000.0, 9500.0, 3000.0]}
+
+df = pd.DataFrame(data)
+
 # 2. Initialize and build the graph engineengine = MultipartiteSetGraphEngine()
+
 engine.build_from_df(df, source_col='source', target_col='target', weight_col='weight')
+
 # 3. Instantiate the DSL processorprocessor = MathGraphQueryProcessor(engine)
-# 4. Execute an "Assortment Gap" / Unused Potential query# Finds what products similar shops sell, which Shop_1 does NOT sell yet.query = "math diff(adjac(neig(Shop_1)), neig(Shop_1)) where label = 'Product'"result = processor.execute(query)
+# 4. Execute an "Assortment Gap" / Unused Potential query
+# Finds what products similar shops sell, which Shop_1 does NOT sell yet.query = "math diff(adjac(neig(Shop_1)), neig(Shop_1)) where label = 'Product'"result = processor.execute(query)
 
 print("Recommended Products for Shop_1:", result)
 
