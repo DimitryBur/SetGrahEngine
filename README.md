@@ -43,7 +43,9 @@ pip install numpy pandas scipy
 ------------------------------
 ## Quick Start Example
 
-import pandas as pdfrom graph_engine import MultipartiteSetGraphEngine, MathGraphQueryProcessor
+import pandas as pd
+from graph_engine import MultipartiteSetGraphEngine, MathGraphQueryProcessor
+
 # 1. Prepare sample transactional 
 
 data = {
@@ -58,8 +60,11 @@ df = pd.DataFrame(data)
 engine.build_from_df(df, source_col='source', target_col='target', weight_col='weight')
 
 # 3. Instantiate the DSL processorprocessor = MathGraphQueryProcessor(engine)
+
 # 4. Execute an "Assortment Gap" / Unused Potential query
-# Finds what products similar shops sell, which Shop_1 does NOT sell yet.query = "math diff(adjac(neig(Shop_1)), neig(Shop_1)) where label = 'Product'"result = processor.execute(query)
+# Finds what products similar shops sell, which Shop_1 does NOT sell 
+
+yet.query = "math diff(adjac(neig(Shop_1)), neig(Shop_1)) where label = 'Product'"result = processor.execute(query)
 
 print("Recommended Products for Shop_1:", result)
 
